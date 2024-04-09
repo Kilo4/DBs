@@ -15,41 +15,19 @@ services:
     container_name: mssql-db
     hostname: mssql-db
     image: mcr.microsoft.com/mssql/server:2022-latest
-    # environment:
-    #   ACCEPT_EULA: 'Y'
-    #   MSSQL_SA_PASSWORD: 'Passw0rd'
-    #   MSSQL_DATA_DIR: /var/opt/mssql/data
-    #   MSSQL_PID: 'Developer' 
-    #   MSSQL_TCP_PORT: 1433 
-    env_file:
-      - docker-mssql.env
+    environment:
+      ACCEPT_EULA: 'Y'
+      MSSQL_SA_PASSWORD: 'Admin@123'
+      MSSQL_DATA_DIR: /var/opt/mssql/data
+      MSSQL_PID: 'Developer' 
+      MSSQL_TCP_PORT: 1433 
     ports: 
-      - "1432:1432"
+      - "1455:1433"
     volumes:
-      - ./mssql_db:/var/opt/mssql
-    # volumes:
-    #   - ./data:/var/opt/mssql/data
-    #   - ./log:/var/opt/mssql/log
-    #   - ./secrets:/var/opt/mssql/secrets
-  
-  # azure-sql-edge-data: 
-  #   image: mcr.microsoft.com/azure-sql-edge  
-  #   environment:
-  #     - docker-azure-sql-db.env
-  #   ports:
-  #     - "1433:1433"                        # Map container port 1433 to host port 1433
-  #   volumes:
-  #     - ./azure-sql-edge-data:/var/opt/mssql
-  #   deploy:
-  #     resources:
-  #       limits:
-  #         cpus: '2'
-  #         memory: '2G'
+      - ./data:/var/opt/mssql/data
+      - ./log:/var/opt/mssql/log
+      - ./secrets:/var/opt/mssql/secrets    
 
 volumes:
   db:
   mssql_db:
-  # data:
-  # log:
-  # secrets:
-  # azure-sql-edge-data:
