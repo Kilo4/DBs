@@ -1,3 +1,5 @@
-./local/db
-./local/azure_mssql_db
-./local/azure-sql-edge-data
+local/db
+local/mssql-db
+local/log
+local/data
+local/secrets

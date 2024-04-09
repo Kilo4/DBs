@@ -30,4 +30,4 @@ services:
 
 volumes:
   db:
-  mssql_db:
+  mssql-db:
