@@ -3,3 +3,11 @@ local/mssql-db
 local/log
 local/data
 local/secrets
+
+local/dbs/db
+local/dbs/mssql-db
+local/dbs/log
+local/dbs/data
+local/dbs/secrets
+
+local/secrets
