@@ -27,6 +27,12 @@ services:
     environment:
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
+      DB_VENDOR: POSTGRES
+      DB_ADDR: postgres
+      DB_DATABASE: keycloak
+      DB_USER: postgresUser
+      DB_SCHEMA: public
+      DB_PASSWORD: postgresPW # must be same as db password 
     ports:
       - "8080:8080"
     command: start-dev
